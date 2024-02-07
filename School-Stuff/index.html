@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <title>Google Classroom</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    form {
+      margin: auto;
+      width: 25%;
+      padding: 50px;
+    }
+
+    .faketext {
+      margin: 0px;
+      padding-bottom: 100%;
+      background-color: white;
+      font-family: arial;
+    }
+
+    input {
+      background-color: black;
+      color: lightgray;
+      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+      border: 0px;
+      padding: 8px;
+      border-radius: 18px;
+      box-shadow: 0px 0px 10px 2px #5603fc;
+      transition: .35s ease-in-out
+        /*, width .35s ease-in-out*/
+      ;
+      width: 150px;
+      margin: 10px;
+    }
+
+    h2 {
+      background-color: black;
+      color: lightgray;
+      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    p.usefulllinks {
+      background-color: black;
+      color: lightgray;
+      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    input:focus {
+      padding: 10px;
+      border-radius: 24px;
+      box-shadow: 0px 0px 10px 2px #5705ff;
+      width: 200px;
+    }
+
+    /* img{width:100%;margin:0px;padding:0px;}
+  </style>
+</head>
+
+<body>
+  <script>
+    /*    var googleVisible = true;
+        document.addEventListener("keydown", e => {
+          if (e.ctrlKey && e.key === "h") {
+            e.preventDefault();
+            if (googleVisible == false) {
+              document.body.style.backgroundColor= "white";
+              document.getElementById("google").style.display = "inline";
+              document.getElementById("form").style.display = "none";
+              googleVisible = true;
+            } else {
+              document.body.style.BackgroundColor="black";             document.getElementById("google").style.display = "none";
+              document.getElementById("form").style.display = "inline";
+              googleVisible = false;
+            }
+          }
+        }); */
+    function openLink() {
+      var url = document.getElementById("link").value;
+      if (!url.toLowerCase().includes("https://")) {
+        url = "https://" + url;
+      }
+      var win = window.open();
+      win.document.title = document.getElementById("title").value;
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      //      win.document.write("<script>function changeTitle(){window.top.document.title = window.top.document.getElementById('title').value;}<\/script><form><input type='text' placeholder='Change Title' id='title' required><input type='submit' onclick='changeTitle()'></form>");
+      var iframe = win.document.createElement("iframe");
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    }
+  </script>
+  <div class="faketext">
+    <h1>Error: Server Stopped Responding</h1>
+    <h3>Please Try again Later</h3>
+    <p>Error Code: 1868306</p>
+  </div>
+  <div id="form">
+    <form autocomplete="off">
+      <input type="text" placeholder="Enter or Paste Link" id='link' required>
+      <br>
+      <input type="text" placeholder="Enter Title" id="title">
+      <br>
+      <input type="submit" onclick="openLink();" value="Open Link"></button>
+    </form>
+    <h2>Useful links:</h2>
+    <p class="usefulllinks">https://algebra.lol/ (prxy)<br />https://science-lessons.lol/
+      (g@mes)<br />https://mathsspot.com (boblox)</p>
+  </div>
+
+</html>
