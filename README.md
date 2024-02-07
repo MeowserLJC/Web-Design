@@ -1,2 +1,6 @@
-# Web-Design-Testing-1
-Testing out stuff on the web using GitHub Codespaces.
+
+# Web Design Testing (1)
+
+## Project Goals
+
+Just testing out stuff using  GitHub Codespaces
